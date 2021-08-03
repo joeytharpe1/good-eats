@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Recipe from './Recipe';
-import { APP_Key, APP_ID } from './api/config';
 import { makeStyles } from '@material-ui/core/styles';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -52,7 +51,7 @@ function Home() {
     }, [query]);
 
     const getRecipes = async () => {
-        const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_Key}`
+        const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${process.env.REACT_APP_RECIPE_APP_ID}&app_key=${process.env.REACT_APP_RECIPE_APP_Key}`
         );
         const data = await response.json();
         setRecipes(data.hits);
