@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Recipe from './Recipe';
 import { makeStyles } from '@material-ui/core/styles';
-import {APP_ID, APP_KEY} from './config';
+import {APP_ID, APP_KEY} from './api';
 
 import SearchIcon from '@material-ui/icons/Search';
 import Paper from '@material-ui/core/Paper';
